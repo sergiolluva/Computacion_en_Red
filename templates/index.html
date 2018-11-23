@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+.myButton {
+    background-color: #DCBB47;
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.myButton:hover {
+    background-color: #DCB111;
+
+}
+
+input[type=text] {
+    width: 30%;
+
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #C1D2B4;
+    border-radius: 4px;
+
+}
+p {text-align: left;
+font-family: sans-serif;
+}
+
+</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Práctica 1</title>
+	<link href="static/css/style.css" rel="stylesheet" type="text/css">
+	
+	<img href="static/images/background.png">
+	<img href="static/images/bar.png">
+	<img href="static/images/footer.png">
+	<img href="static/images/header.png">
+	<img href="static/images/tab_back.png">
+</head>
+
+<body>
+    <div id="page">	
+        <div id="header">
+        	<div id="headerTitle">Práctica 1. Computación en red</div>
+            	<div id="headerSubText">Aplicación con Flask</div> 
+        </div>
+
+        <div class="contentTitle"><h1>Información de la última noticia</h1></div>
+		<div class="contentText">
+		  <p><b>Título: </b>{{titulo}}</p>
+		  <p><b>Clics: </b>{{clics}}</p>
+		  <p><b>Meneos: </b>{{meneos}}</p>  
+		  <p><b>Hora y fecha: </b>{{date}}</p>
+		</div>
+
+        <div class="contentTitle"><h1>Información de umbral</h1></div>
+        	<div class="contentText">
+			<pre>Introduzca un valor entero de número de clics.</pre>
+         		<form action="/umbral_clics" method="POST">
+           			<input type="text" class="formulario" id="umbral_clics" name="umbral_clics" placeholder="123">
+          			<button type="submit" class="myButton">Enviar</button>
+        		</form>
+        	<pre>Introduzca un valor entero de número de meneos.</pre>
+        		<form action="/umbral_meneos" method="POST">
+           			<input type="text" class="formulario" id="umbral_meneos" name="umbral_meneos" placeholder="123">
+          			<button type="submit" class="myButton">Enviar</button>
+        		</form>
+ 		</div>
+	
+        <div class="contentTitle"><h1>Información de valor medio</h1></div>
+		<div class="contentText">
+			<pre>Pulse el siguiente botón para mostrar la media de clics.</pre>
+                  	<a href="/valor_medio" class="myButton">Mostrar</a>
+		</div>
+		
+	<div class="contentTitle"><h1>Gráficas externas</h1></div>
+		<div class="contentText">
+			<pre>Pulse el siguiente botón para mostrar la gráfica con el valor histórico de clics</pre>
+            <a href="/grafica_clics" class="myButton" ">Gráfica clics</a>
+            <pre>Pulse el siguiente botón para mostrar la gráfica con el valor histórico de meneos</pre>
+            <a href="/grafica_meneos" class="myButton" ">Gráfica meneos</a>
+        </div> 
+    </div>
+    <div id="footer"><a </a> Sergio Lluva Plaza <a </a></div>
+</body>
+</html>
+

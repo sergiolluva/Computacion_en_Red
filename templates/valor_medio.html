@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+.myButton {
+    background-color: #DCBB47;
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.myButton:hover {
+    background-color: #DCB111;
+
+}
+
+input[type=text] {
+    width: 30%;
+
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #C1D2B4;
+    border-radius: 4px;
+
+}
+p {text-align: left;
+font-family: sans-serif;
+}
+
+</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Valor medio</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+	<img href="static/images/background.png">
+	<img href="static/images/bar.png">
+	<img href="static/images/footer.png">
+	<img href="static/images/header.png">
+	<img href="static/images/tab_back.png">
+</head>
+
+<body>
+    <div id="page">
+        <div id="header">
+        	<div id="headerTitle">Práctica 1. Computación en red</div>
+            	<div id="headerSubText">Aplicación con Flask</div>
+        </div>
+
+        <div class="contentTitle"><h1>Información de valor medio de clics.</h1></div>
+        <div class="contentText">
+		<pre>Pulse el siguiente botón para mostrar el valor medio.</pre>
+		<a href="/valor_medio"><button class="myButton" type="button">Mostrar</button></a>
+               		{% if base_datos=='beebotte' %}
+                  	<p> <b>Valor medio de clics: </b>{{ media_clics }} Obtenido de MongoDB</p>
+               		{% else %}
+                  	<p> <b>Valor medio de clics: </b> {{ media_clics }} Obtenido de Beebotte</p>
+               		{% endif %}
+        </div>
+
+		
+   </div>
+   <div id="footer"><a </a> Sergio Lluva Plaza <a </a></div>
+</body>
+</html>
