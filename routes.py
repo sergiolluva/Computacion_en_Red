@@ -6,7 +6,7 @@ import datetime
 import requests
 import numpy
 
-base_datos = 'beebotte' #Base de datos usada para calcular la media de clics
+base_datos = 'beebotte' #Flag de la base de datos usada para calcular la media de clics
 
 #Datos de acceso a Beebotte
 _hostname   = 'api.beebotte.com'
@@ -75,7 +75,7 @@ def umbral_clics():
 	#Primer dato de resultado es el mas antiguo
 	for fila in datos:
 		if int(fila.get("clics")) > int(umbral):
-			datos_umbral .append(fila)
+			datos_umbral.append(fila)
 
 	datos_umbral  = datos_umbral [(len(datos_umbral )-10):len(datos_umbral )]
 	datos_umbral = datos_umbral [::-1] #Ordenar, el primero más reciente

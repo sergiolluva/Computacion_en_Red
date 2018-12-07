@@ -40,23 +40,21 @@ th {
 
         <div class="contentTitle"><h1>Últimas 10 noticias que superan el umbral especificado</h1></div>
         <div class="contentText">
-                
-		                 <table>
-		                 	<tr>
-		                 		<th><b> Título </b></th>
-		                 		<th><b> Clics </b></th>
-		                 		<th><b> Meneos </b></th>
-		                 		<th><b> Hora y Fecha </b></th>
-		                 	</tr>
-		                    {% for i in datos_umbral %}
-		                    <tr>
-		                       {% for campo in i.values() %}
-		                          <td> {{ campo }} </td>
-		                       {% endfor %}
-		                    </tr>
-		                    {% endfor %}
-		                 </table>
-                 
+			<table>
+				<tr>
+					<th><b> Título </b></th>
+					<th><b> Clics </b></th>
+					<th><b> Meneos </b></th>
+					<th><b> Hora y Fecha </b></th>
+				</tr>
+				{% for i in datos_umbral %}
+				<tr>
+					{% for campo in i.values() %}
+						<td> {{ campo }} </td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+			</table>
 	</div>	
    </div>
    <div id="footer"><a </a> Sergio Lluva Plaza <a </a></div>
